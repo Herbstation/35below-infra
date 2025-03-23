@@ -1,0 +1,29 @@
+
+services:
+  goonstation:
+    build:
+      dockerfile: Dockerfile
+      target: goon_server
+      args:
+        - BYOND_MAJOR=${BYOND_MAJOR_VERSION:-515}
+        - BYOND_MINOR=${BYOND_MINOR_VERSION:-1643}
+        - RUST_G_VERSION=${RUST_G_VERSION:-v2.0.0-G}
+        - GOON_MAP=${GOON_MAP:-BANSHEE_PIT}
+        - RP_MODE=${RP_MODE:-yes}
+        - SAVE_STATION_Z=${SAVE_STATION_Z:-no}
+  cdn:
+    build:
+      dockerfile: Dockerfile
+      target: cdn_server
+      args:
+        - CDN_BASE_URL=http://${CDN_HOSTNAME}:${CDN_PORT:-80}
+        - BYOND_MAJOR=${BYOND_MAJOR_VERSION:-515}
+        - BYOND_MINOR=${BYOND_MINOR_VERSION:-1643}
+        - RUST_G_VERSION=${RUST_G_VERSION:-v2.0.0-G}
+        - GOON_MAP=${GOON_MAP:-BANSHEE_PIT}
+        - RP_MODE=${RP_MODE:-yes}
+        - SAVE_STATION_Z=${SAVE_STATION_Z:-no}
+    environment:
+      - NGINX_HOSTNAME=${NGINX_HOSTNAME:-null.localhost}
+      - CDN_HOSTNAME=${CDN_HOSTNAME}
+      - NGINX_PORT=${CDN_PORT:-80}

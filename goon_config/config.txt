@@ -1,0 +1,17 @@
+SERVER_SPECIFIC_CONFIGS
+
+LOG_OOC
+LOG_SAY
+LOG_ADMIN
+LOG_ACCESS
+LOG_GAME
+LOG_GAMEMODE
+
+SERVERNAME Herbstation
+SERVERREGION Development
+
+CDN http://localhost
+RSC http://localhost/rsc.zip
+ENV prod
+
+# Development infrastructure sample config, do not use in production.

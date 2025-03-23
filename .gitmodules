@@ -1,0 +1,3 @@
+[submodule "goonstation/src"]
+	path = goonstation
+	url = https://github.com/Herbstation/35below

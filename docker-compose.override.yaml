@@ -1,0 +1,11 @@
+services:
+  goonstation:
+    volumes:
+      - ./goon_data:/goon/data
+      - ./goon_config:/goon/config
+      - ./byond_cfg:/root/.byond/cfg
+    ports:
+      - 25566:25566
+  cdn:
+    ports:
+      - 80:80

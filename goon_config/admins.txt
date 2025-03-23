@@ -1,0 +1,3 @@
+# This list of admins is only used for the local development setup
+disturbherb - Host
+stonepillar - Host

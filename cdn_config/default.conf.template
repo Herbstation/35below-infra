@@ -1,0 +1,20 @@
+server {
+    listen ${NGINX_PORT};
+    listen [::]:${NGINX_PORT};
+    server_name ${CDN_HOSTNAME};
+
+    location / {
+        root /usr/share/nginx/cdn;
+        add_header Access-Control-Allow-Origin *;
+    }
+}
+
+server {
+    listen ${NGINX_PORT};
+    listen [::]:${NGINX_PORT};
+    server_name ${NGINX_HOSTNAME};
+
+    location / {
+        root /usr/share/nginx/html;
+    }
+}
