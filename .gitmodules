@@ -1,3 +1,6 @@
 [submodule "goonstation/src"]
 	path = goonstation
 	url = https://github.com/Herbstation/35below
+[submodule "goonstation"]
+	path = goonstation
+	url = https://github.com/Herbstation/35below
